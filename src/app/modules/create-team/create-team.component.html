@@ -1,0 +1,105 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Choose your team</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Teams</mat-label>
+            <mat-select>
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <section class="example-section">
+            <mat-checkbox class="example-margin">De</mat-checkbox>
+            <mat-checkbox class="example-margin">Mi</mat-checkbox>
+            <mat-checkbox class="example-margin">At</mat-checkbox>
+            <mat-checkbox class="example-margin">Gk</mat-checkbox>
+            <mat-checkbox class="example-margin">Dt</mat-checkbox>
+        </section>
+        <mat-list>
+            <div mat-subheader>Players</div>
+            <!-- <mat-list-item *ngFor="let player of players">
+              <mat-icon matListItemIcon>folder</mat-icon>
+              <div matListItemTitle>{{player.name}}</div>
+              <div matListItemLine>{{player.updated | date}}</div>
+            </mat-list-item>-->
+            <mat-list-item>
+                <mat-icon matListItemIcon>person</mat-icon>
+                <div matListItemTitle>Name</div>
+                <div matListItemLine>position</div>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon>person</mat-icon>
+                <div matListItemTitle>Name2</div>
+                <div matListItemLine>position2</div>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content image">
+        <mat-card class="flex-container">
+            <mat-card-content>
+                <div class="team-row">
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Del 1
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Del 2
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Del 3
+                      </button>
+                </div>
+                <div class="player" class="team-row">
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Med 1
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Med 2
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Med 3
+                      </button>
+                    <button class="player" class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Med 4
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Med 5
+                      </button>
+                </div>
+                <div class="team-row">
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Def 1
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Def 2
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Def 3
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Def 4
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Def 5
+                      </button>
+                </div>
+                <div class="team-row">
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Por 1
+                      </button>
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Por 2
+                      </button>
+                </div>
+                <div class="team-row">
+                    <button class="player" type="button" mat-button (click)="drawer.toggle()">
+                        Coach 1
+                      </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+    </div>
+</mat-drawer-container>
