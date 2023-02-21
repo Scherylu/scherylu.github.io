@@ -8,12 +8,14 @@ import { CreateTeamService } from 'src/app/shared/services/modules/team/create-t
   styleUrls: ['./create-team.component.scss']
 })
 export class CreateTeamComponent implements OnInit {
+  
   _showFiller = false;
   _listTeams: Array<Team> = [];
   _listSquads: Array<Squad> = [];
   _selectedTeam: any;
   _selectedPosition: string = '';
   _field: Field;
+  // Init default data to create the field with the positions
   _listAttackers: Array<SelectPlayer> = [{ position: 'Attacker1', name: '' }, { position: 'Attacker2', name: '' }, { position: 'Attacker3', name: '' }];
   _listMidfielders: Array<SelectPlayer> = [{ position: 'Midfield1', name: '' },
                                            { position: 'Midfield2', name: '' }, { position: 'Midfield3', name: '' },
@@ -44,6 +46,7 @@ export class CreateTeamComponent implements OnInit {
     this.getTeamById();
   }
 
+  // Call the service to get the competiton and the teams.
   getListTeams() {
 
     this._teamsService.getCompetition().then((response: Competition) => {
@@ -55,7 +58,7 @@ export class CreateTeamComponent implements OnInit {
       });
   }
 
-
+  // Call the services to get a specific squead of a team.
   getTeamById(idCompetition?: number, idTeam?: number) {
 
     this._teamsService.getTeam().then((response: Team) => {
@@ -68,6 +71,7 @@ export class CreateTeamComponent implements OnInit {
       });
   }
 
+  //Call the squat each time the team change
   changeTeam() {
     // this._listSquads = [];
     if (this._selectedTeam.name == "Argentina") {
@@ -81,6 +85,7 @@ export class CreateTeamComponent implements OnInit {
     this._selectedPosition = position;
   }
 
+  //Add the player to the position list.
   choosePlayer(player: Squad) {
     this._alertMsg = "";
     let index = 0;
@@ -105,12 +110,14 @@ export class CreateTeamComponent implements OnInit {
     this._alertMsg = msg;
   }
 
+  //Create dynamic field
   initField(num?: number, position?: string) {
     /*for(let i=0; i<num;i++){
 
     }*/
   }
 
+  // Save the field, have to login and validate the requirements.
   saveField(){
     this._alertMsg = "";
     let msg = "";

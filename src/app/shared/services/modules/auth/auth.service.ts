@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,9 +7,9 @@ export class AuthService {
 
   private _domain = 'https://api.football-data.org'; 
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  //Método auxiliar que obtiene el token en el lado cliente, para verificar autenticidad.
+  //method that gets the token on the client side, to verify authenticity in case exist an api for authentication.
   getToken(){
     return localStorage.getItem('X-Auth-Token');
   }
