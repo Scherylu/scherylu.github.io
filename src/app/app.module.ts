@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './shared/services/modules/auth/auth.service';
 import { CreateTeamService } from './shared/services/modules/team/create-team.service';
 import { TokenInterceptorService } from './shared/services/utils/token-interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { TokenInterceptorService } from './shared/services/utils/token-intercept
         AppRoutingModule,
         BrowserAnimationsModule,
         MaterialModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ]
 })
 export class AppModule { }
