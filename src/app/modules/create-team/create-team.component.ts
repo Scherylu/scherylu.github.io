@@ -39,6 +39,11 @@ export class CreateTeamComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    if(localStorage.getItem('teamCreated') == null){
+      localStorage.setItem('teamCreated',JSON.stringify(this._field));
+    } else{
+      this._field = JSON.parse(localStorage.getItem('teamCreated') || '{}');
+    } 
   }
 
   getData() {
@@ -90,6 +95,7 @@ export class CreateTeamComponent implements OnInit {
     this._alertMsg = "";
     let index = 0;
     let msg = "";
+
     //this._field.attackers.find(att => att.name == player.name);
     if (this._selectedPosition.includes('Attacker')) {
       index = this._field.attackers.findIndex(att => att.position == this._selectedPosition);
@@ -106,7 +112,7 @@ export class CreateTeamComponent implements OnInit {
     } else if (this._selectedPosition.includes('Coach')) {
       this._field.coach = player.name;
     } 
-
+    localStorage.setItem('teamCreated',JSON.stringify(this._field));
     this._alertMsg = msg;
   }
 
